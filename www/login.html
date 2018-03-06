@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+    <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+    Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+    <!-- bootstrap links for CSS and JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://maps.googleapis.com 'unsafe-inline' 'unsafe-eval' data: gap: https://ssl.gstatic.com  https://maps.googleapis.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; script-src * 'unsafe-inline' 'unsafe-eval'; img-src *">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway|Syncopate" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #510B5D;
+        }
+    </style>
+
+    <title>Hapcat</title>
+
+</head>
+<body onload="onLoad()">
+   
+    <div class="app">
+        <div>
+            <img src="img/logo.svg" style="width:300px;height:300px;display: block;margin-left: auto;margin-right: auto;"/>
+        </div>
+        <div class="login_div">
+
+            <div class="textinput_div">
+                <p class="textinput_hint">Username:</p>
+                <input type="text" placeholder=" Username" class="textinput" style="width: 175px"/>
+            </div>
+            <div class="textinput_div">
+                <p class="textinput_hint">Password:</p>
+                <input type="text" placeholder=" Password" class="textinput" style="width: 175px"/>
+            </div>
+            <button class="content_button">Log In</button>
+            <div>
+                <a href="registration.html"><button class="content_button">New? Register here!</button>
+</div>
+            <div>
+                <div class="forgotpass">
+                    <a href="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX9228474.jpg">Forgot password?</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
