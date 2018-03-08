@@ -49,13 +49,13 @@ body {
     text-align:center;
 }
 
- /*Landscape layout (with min-width)*/ 
+ /*Landscape layout (with min-width)*/
 /*@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
         background-position:left center;
-        padding:75px 0px 75px 170px;   padding-top + padding-bottom + text area = image height 
-        margin:-90px 0px 0px -198px;   offset vertical: half of image height 
-                                       offset horizontal: half of image width and text area width 
+        padding:75px 0px 75px 170px;   padding-top + padding-bottom + text area = image height
+        margin:-90px 0px 0px -198px;   offset vertical: half of image height
+                                       offset horizontal: half of image width and text area width
     }
 }*/
 
@@ -92,13 +92,13 @@ h1 {
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
- 
+
 @-webkit-keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
- 
+
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
@@ -149,7 +149,7 @@ h1 {
     margin-top: 1vh;
     margin-left: 4vw;
     font-size: 2vh;
-    border-radius: 10px 100px / 120px;
+    border-radius: 10px 1px;
 }
 
 .header_logo {
@@ -194,13 +194,13 @@ h1 {
     padding-top:  3vh;
 }
 
-#welcome_text{
-    font-size: 5vw;
+#time_of_day {
+    font-size: 4vh;
     margin-bottom: 0;
 }
 
-#time_of_day {
-    font-size: 5vw;
+#welcome_text {
+    font-size: 3vh;
     margin-bottom: 0;
 }
 
@@ -222,9 +222,8 @@ h1 {
     width: 100%;
 }
 
-.footer_icon_div_active {
-    background-color: #000;
-    opacity: 0.3;
+.footer_icon_div.footer_icon:active {
+    background-color: transparent;
     border: none;
     width: 100%;
 }
@@ -237,8 +236,7 @@ h1 {
 }
 
 .event_add_button{
-    width: 15vw;
-    height: 18vw;
+    width: 10vh;
 }
 
 /*discover content card interior*/
@@ -271,7 +269,10 @@ h1 {
     display: inline-block;
     position: absolute;
     z-index: 3;
+    border-radius: 15px 1px;
 }
+
+
 
 /*These next classes are for positioning the names alternating on different sides of the card to break up monotony. Cant decide how I feel about it*/
 
@@ -321,7 +322,7 @@ h1 {
 .content_distance_div {
     font-family: 'Raleway', sans-serif;
     margin: 5px;
-    border-radius: 20px;
+    border-radius: 1px 15px;
     background-color: #FFF;
     opacity: 0.9;
     color: #000;
@@ -345,7 +346,7 @@ h1 {
 
 .content_tag_div {
     margin: .2vh;
-    border-radius: 2vh;
+    border-radius: 10px 1px;
     background-color: #D05754;
     color: #FFF;
     white-space: nowrap;
@@ -364,20 +365,20 @@ h1 {
 /*Modal Classes*/
 
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 8; 
+    display: none;
+    position: fixed;
+    z-index: 8;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 
 .modal_content {
     z-index: 8;
-    margin: 20% auto;
+    margin: 10vh auto;
     background: linear-gradient(to bottom right, #92FFFB, #FFE892);
     width: 95%;
     height: 80%;
@@ -430,38 +431,47 @@ h1 {
     display: inline-block;
     position: absolute;
     z-index: 3;
+    border-radius: 25px 1px;
 }
 
 .modal_name {
     margin-top: 5px;
     margin-right: 5px;
-    margin-left: 8px;
+    margin-left: 3vw;
     margin-bottom: 0;
     text-align: left;
     opacity: 1;
-    font-size: 1.5em;
+    font-size: 4vw;
 }
 
 .modal_paragraph {
     margin-bottom: 0;
     margin-right: 8px;
-    margin-left: 8px;
+    margin-left: 1vw;
     text-align: left;
+    font-size: 2.5vw;
 }
 
 .modal_h3 {
     font-family: 'Lato', sans-serif;
     margin-bottom: 0;
     margin-right: 8px;
-    margin-left: 8px;
+    margin-left: 3vw;
     text-align: left;
-    margin-top: -2.5vw;
+    margin-top: .3vw;
+    font-size: 5vw;
+}
+
+.modal_distance {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 5px;
+    font-size: 3vw;
 }
 
 .modal_distance_div {
     font-family: 'Raleway', sans-serif;
     margin: 5px;
-    border-radius: 20px;
     background-color: #FFF;
     opacity: 0.9;
     color: #000;
@@ -470,12 +480,12 @@ h1 {
     z-index: 3;
     right: 0;
     bottom: 0;
+    border-radius: 25px 1px;
 }
 
 .modal_weather_div {
     font-family: 'Raleway', sans-serif;
     margin: 5px;
-    border-radius: 20px;
     background-color: #FFF;
     opacity: 0.9;
     color: #000;
@@ -484,20 +494,7 @@ h1 {
     z-index: 3;
     right: 0;
     top: 0;
-}
-
-.modal_distance {
-    padding-left: 5px;
-    padding-right: 5px;
-    font-size: 1.3em;
-    margin: 5px;
-}
-
-.modal_weather {
-    padding-left: 5px;
-    padding-right: 5px;
-    font-size: 1.3em;
-    margin: 5px;
+    border-radius: 1px 25px;
 }
 
 .modal_tag_column_div {
@@ -506,7 +503,7 @@ h1 {
 
 .modal_tag_div {
     margin: 2vw auto;
-    border-radius: 10px;
+    border-radius: 15px 1px;
     background-color: #D05754;
     color: #FFF;
     white-space: nowrap;
@@ -520,9 +517,7 @@ h1 {
 .modal_tag_text {
     font-family: 'Dosis', sans-serif;
     margin: 2px;
-    /*padding-left: 20px;
-    padding-right: 20px;*/
-    font-size: 1.1em;
+    font-size: 3vw;
 }
 
 .modal_tag_area {
@@ -536,7 +531,7 @@ h1 {
     padding: 1vw;
     float: left;
     box-shadow: 7px 7px 5px #888888;
-    border-radius: 25px;
+    border-radius: 15px 1px;
     color: #FFF
 }
 
@@ -547,8 +542,16 @@ h1 {
     display: inline-block;
     padding: 1vw;
     box-shadow: 7px 7px 5px #888888;
-    border-radius: 25px;
+    border-radius: 15px 1px;
     color: #FFF;
+}
+
+.lato.modal_paragraph {
+    margin-bottom: 0;
+    margin-right: 8px;
+    margin-left: 1vw;
+    text-align: left;
+    font-size: 3vw;
 }
 
 .modal_tag_area {
@@ -574,3 +577,54 @@ h1 {
     font-family: 'Lato', sans-serif;
 }
 
+.textinput_div {
+    font-family: 'Raleway', sans-serif;
+    border-radius: 20px;
+    background-color: #FFF;
+    opacity: 0.9;
+    color: #000;
+    width: 100%;
+    margin-bottom:3vw;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+.textinput_hint {
+    opacity: 1.0;
+    font-size: 1em;
+    margin-bottom: 0;
+    padding-left: 20px;
+    text-align:left;
+}
+
+.textinput {
+    opacity: 1.0;
+    font-size: 1.5em;
+    outline: none;
+    outline-style: none;
+    margin-left: 20px;
+    border: none;
+    border-color: transparent;
+    width: 175px;
+}
+
+
+.login_div {
+    width: 70%;
+    border-radius: 5px;
+    padding: 10px;
+    height: 50px;
+
+    margin-right:auto;
+    margin-top: -25px;
+    margin-left: auto;
+    top: 50%;
+
+}
+
+.forgotpass {
+
+    padding: 15px;
+}

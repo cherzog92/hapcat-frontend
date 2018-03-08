@@ -1,0 +1,62 @@
+/*
+ * This is just the typefaces we actively use.
+ *
+ * Other font weights are available, but to speed up loading, we only include
+ * the ones we're using here.
+ */
+
+
+/* dosis-400normal - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Dosis Regular '),
+    local('Dosis-Regular'),
+    url('../lib/typeface-dosis/files/dosis-latin-400.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../lib/typeface-dosis/files/dosis-latin-400.woff') format('woff'); /* Modern Browsers */
+}
+
+
+/* raleway-400normal - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Raleway Regular '),
+    local('Raleway-Regular'),
+    url('../lib/typeface-raleway/files/raleway-latin-400.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../lib/typeface-raleway/files/raleway-latin-400.woff') format('woff'); /* Modern Browsers */
+}
+
+
+/* syncopate-400normal - latin */
+@font-face {
+  font-family: 'Syncopate';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Syncopate Regular '),
+    local('Syncopate-Regular'),
+    url('../lib/typeface-syncopate/files/syncopate-latin-400.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../lib/typeface-syncopate/files/syncopate-latin-400.woff') format('woff'); /* Modern Browsers */
+}
+
+
+/* lato-400normal - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Lato Regular '),
+    local('Lato-Regular'),
+    url('../lib/typeface-lato/files/lato-latin-400.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../lib/typeface-lato/files/lato-latin-400.woff') format('woff'); /* Modern Browsers */
+}
