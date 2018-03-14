@@ -199,3 +199,6 @@ plugins/
 *.sln
 *.jsproj
 simulation/
+
+# Build-generated files.
+www/lib/
