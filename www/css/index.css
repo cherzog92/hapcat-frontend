@@ -106,6 +106,10 @@ h1 {
 
 /*Developer Defined Classes*/
 
+/* Discover Page */
+
+/* Header Bar */
+
 .header {
     width: 100%;
     height: 9vh;
@@ -115,25 +119,7 @@ h1 {
     z-index: 4;
 }
 
-.footer {
-    width: 100%;
-    height: 8vh;
-    background: linear-gradient(to bottom, transparent, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D);
-    position: fixed;
-    bottom: 0;
-    z-index: 4;
-}
-
-.content {
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-}
-
-.logo_div {
-    height: 100%;
-    width: 20%;
-    float: right;
-}
+/* Search Bar */
 
 .search_div {
     height: 100%;
@@ -152,17 +138,28 @@ h1 {
     border-radius: 10px 1px;
 }
 
+/* Hapcat Logo */
+
+.logo_div {
+    height: 100%;
+    width: 20%;
+    float: right;
+}
+
 .header_logo {
     height: 80%;
     margin-right: 5vw;
     margin-top: .5vh;
 }
 
-.footer_icon {
-    height: 8vh;
-    padding: 1vh;
-    fill: white;
+/* Content Region */
+
+.content {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
 }
+
+/* Content Card */
 
 .content_card {
     width: 90%;
@@ -174,82 +171,17 @@ h1 {
     box-shadow: 7px 7px 5px #888888;
 }
 
-.welcome_card {
-    position: relative;
-    width: 90%;
-    height: 15vh;
-    background: linear-gradient(to bottom right, #92FFFB, #FFE892 );
-    margin-top: 10px;
-    margin-right: auto;
-    margin-left: auto;
-    box-shadow: 7px 7px 5px #888888;
-    z-index:2;
-}
+/* Content Card Interior */
 
-.welcome_text_div {
-    /*position: absolute;*/
-    bottom: 5vh;
-    left: 30vw;
-    color: #337E73;
-    padding-top:  3vh;
-}
-
-#time_of_day {
-    font-size: 4vh;
-    margin-bottom: 0;
-}
-
-#welcome_text {
-    font-size: 3vh;
-    margin-bottom: 0;
-}
-
-.content_button {
-    font-family: 'Raleway', sans-serif;
-    width: 90%;
-    height: 10vh;
-    margin-top: 10px;
-    background: linear-gradient(to bottom right, #FFE892, #D0B554, #CB9F00 );
-    border: none;
-    font-size: 5vw;
-    color: #FFF;
-    box-shadow: 7px 7px 5px #888888;
-}
-
-.footer_icon_div {
-    background-color: transparent;
-    border: none;
+.content_photo_div {
     width: 100%;
+    height: 100%;
 }
-
-.footer_icon_div.footer_icon:active {
-    background-color: transparent;
-    border: none;
-    width: 100%;
-}
-
-.floating_action_button {
-    position: fixed;
-    bottom: 8vh;
-    right: 2vw;
-    z-index: 4;
-}
-
-.event_add_button{
-    width: 10vh;
-}
-
-/*discover content card interior*/
 
 .content_name_photo {
     width: 100%;
     height: 85%;
     position: relative;
-}
-
-.content_photo_div {
-    width: 100%;
-    height: 100%;
 }
 
 .content_photo {
@@ -271,37 +203,6 @@ h1 {
     z-index: 3;
     border-radius: 15px 1px;
 }
-
-
-
-/*These next classes are for positioning the names alternating on different sides of the card to break up monotony. Cant decide how I feel about it*/
-
-/*.content_name_div_left {
-    font-family: 'Raleway', sans-serif;
-    margin: 5px;
-    border-radius: 20px;
-    background-color: #FFF;
-    opacity: 0.8;
-    color: #000;
-    display: inline-block;
-    font-size: 1.7em;
-    position: absolute;
-    z-index: 3;
-}
-
-.content_name_div_right {
-    font-family: 'Raleway', sans-serif;
-    border-radius: 20px;
-    background-color: #FFF;
-    opacity: 0.8;
-    color: #000;
-    display: inline-block;
-    font-size: 1.7em;
-    position: absolute;
-    z-index: 3;
-    right: 5px;
-    top: 5px;
-}*/
 
 .content_name {
     padding-left: 4vw;
@@ -340,7 +241,9 @@ h1 {
     margin: 5px;
 }
 
-.content_tag_column_div{
+/* Content Card Tags */
+
+.content_tag_column_div {
     padding: 0;
 }
 
@@ -361,6 +264,128 @@ h1 {
     margin: .1vh;
     font-size: 2vh;
 }
+
+/* Welcome Card */
+
+.welcome_card {
+    position: relative;
+    width: 90%;
+    height: 15vh;
+    background: linear-gradient(to bottom right, #92FFFB, #FFE892 );
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 7px 7px 5px #888888;
+    z-index: 2;
+}
+
+.welcome_text_div {
+    bottom: 5vh;
+    left: 30vw;
+    color: #337E73;
+    padding-top: 3vh;
+}
+
+#time_of_day {
+    font-size: 4vh;
+    margin-bottom: 0;
+}
+
+#welcome_text {
+    font-size: 3vh;
+    margin-bottom: 0;
+}
+
+/* Add Content Button */
+
+.content_button {
+    font-family: 'Raleway', sans-serif;
+    width: 90%;
+    height: 10vh;
+    margin-top: 10px;
+    background: linear-gradient(to bottom right, #FFE892, #D0B554, #CB9F00 );
+    border: none;
+    font-size: 5vw;
+    color: #FFF;
+    box-shadow: 7px 7px 5px #888888;
+}
+
+/* Add Event Button */
+
+.floating_action_button {
+    position: fixed;
+    bottom: 8vh;
+    right: 2vw;
+    z-index: 4;
+}
+
+.event_add_button {
+    width: 10vh;
+}
+
+/* Footer Bar */
+
+.footer {
+    width: 100%;
+    height: 8vh;
+    background: linear-gradient(to bottom, transparent, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D);
+    position: fixed;
+    bottom: 0;
+    z-index: 4;
+}
+
+/* Footer Buttons */
+
+.footer_icon {
+    height: 8vh;
+    padding: 1vh;
+    fill: white;
+}
+
+.footer_icon_div {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+}
+
+.footer_icon_div.footer_icon:active {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+}
+
+
+/*These next classes are for positioning the names alternating on different sides of the card to break up monotony. Cant decide how I feel about it*/
+
+/*.content_name_div_left {
+    font-family: 'Raleway', sans-serif;
+    margin: 5px;
+    border-radius: 20px;
+    background-color: #FFF;
+    opacity: 0.8;
+    color: #000;
+    display: inline-block;
+    font-size: 1.7em;
+    position: absolute;
+    z-index: 3;
+}
+
+.content_name_div_right {
+    font-family: 'Raleway', sans-serif;
+    border-radius: 20px;
+    background-color: #FFF;
+    opacity: 0.8;
+    color: #000;
+    display: inline-block;
+    font-size: 1.7em;
+    position: absolute;
+    z-index: 3;
+    right: 5px;
+    top: 5px;
+}*/
+
+
+
 
 /*Modal Classes*/
 
@@ -399,13 +424,7 @@ h1 {
     }
 }
 
-.modal_name_photo {
-    width: 100%;
-    height: 50%;
-    position: relative;
-    box-shadow: 7px 7px 5px #888888;
-    border-radius: 25px;
-}
+/* Modal Interior */
 
 .modal_photo_div {
     width: 100%;
@@ -420,6 +439,16 @@ h1 {
     z-index: 2;
     border-radius: 25px;
 }
+
+.modal_name_photo {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    box-shadow: 7px 7px 5px #888888;
+    border-radius: 25px;
+}
+
+/* Modal Name */
 
 .modal_name_div {
     font-family: 'Raleway', sans-serif;
@@ -452,36 +481,7 @@ h1 {
     font-size: 2.5vw;
 }
 
-.modal_h3 {
-    font-family: 'Lato', sans-serif;
-    margin-bottom: 0;
-    margin-right: 8px;
-    margin-left: 3vw;
-    text-align: left;
-    margin-top: .3vw;
-    font-size: 5vw;
-}
-
-.modal_distance {
-    padding-left: 5px;
-    padding-right: 5px;
-    margin: 5px;
-    font-size: 3vw;
-}
-
-.modal_distance_div {
-    font-family: 'Raleway', sans-serif;
-    margin: 5px;
-    background-color: #FFF;
-    opacity: 0.9;
-    color: #000;
-    display: inline-block;
-    position: absolute;
-    z-index: 3;
-    right: 0;
-    bottom: 0;
-    border-radius: 25px 1px;
-}
+/* Modal Weather */
 
 .modal_weather_div {
     font-family: 'Raleway', sans-serif;
@@ -497,8 +497,48 @@ h1 {
     border-radius: 1px 25px;
 }
 
+.modal_h3 {
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 0;
+    margin-right: 8px;
+    margin-left: 3vw;
+    text-align: left;
+    margin-top: .3vw;
+    font-size: 5vw;
+}
+
+/* Modal Distance */
+
+.modal_distance_div {
+    font-family: 'Raleway', sans-serif;
+    margin: 5px;
+    background-color: #FFF;
+    opacity: 0.9;
+    color: #000;
+    display: inline-block;
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 0;
+    border-radius: 25px 1px;
+}
+
+.modal_distance {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 5px;
+    font-size: 3vw;
+}
+
+/* Modal Tags */
+
 .modal_tag_column_div {
     padding: 0;
+}
+
+.modal_tag_area {
+    margin: 10vw;
+    box-shadow: 7px 7px 5px #888888;
 }
 
 .modal_tag_div {
@@ -520,8 +560,8 @@ h1 {
     font-size: 3vw;
 }
 
-.modal_tag_area {
-}
+
+/* Modal Details */
 
 .modal_about {
     margin-left: 3vw;
@@ -534,6 +574,8 @@ h1 {
     border-radius: 15px 1px;
     color: #FFF
 }
+
+/* Modal Description */
 
 .modal_description {
     width: 94%;
@@ -552,11 +594,6 @@ h1 {
     margin-left: 1vw;
     text-align: left;
     font-size: 3vw;
-}
-
-.modal_tag_area {
-    margin: 10vw;
-    box-shadow: 7px 7px 5px #888888;
 }
 
 /*Fonts*/
