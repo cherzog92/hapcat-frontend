@@ -20,6 +20,7 @@ gulp.task('build-android',
 gulp.task('add-deps', [
   'add-bootstrap',
   'add-jquery',
+  'add-hammerjs',
   'add-fonts',
   'add-icons'
 ]);
@@ -82,6 +83,11 @@ gulp.task('add-evilicons', function() {
 gulp.task('add-fontawesome', function() {
   return gulp.src('node_modules/font-awesome/**/*.+(css|otf|eot|svg|ttf|woff|woff2)')
     .pipe(gulp.dest('www/lib/font-awesome'))
+});
+
+gulp.task('add-hammerjs', function() {
+  return gulp.src('node_modules/hammerjs/hammer?(.min).js')
+    .pipe(gulp.dest('www/lib/hammerjs'))
 });
 
 
