@@ -1,0 +1,162 @@
+[
+        {
+            "name": "Kent Art and Wine Festival",
+            "placeId": 18,
+            "address": "160 E Main St, Kent, OH, 44240",
+            "photo": "https://pbs.twimg.com/media/CkMnpjPUoAEctmz.jpg",
+            "types": ["Festival", "Art", "Drinks"] 
+
+        },
+        {
+            "name": "Newdle Bar",
+            "placeId": 13,
+            "address": "295 S Water St, Kent, OH 44240",
+            "photo": "https://bloximages.newyork1.vip.townnews.com/kentwired.com/content/tncms/assets/v3/editorial/e/7a/e7a62202-9bd3-11e6-9030-c7e27cd18186/58113c3ed9cf8.image.png",
+            "types": ["Asian", "Sushi", "Sports"] 
+
+        },
+        {
+            "name": "The Accidentals - Concert at the Kent Stage",
+            "placeId": 19,
+            "address": "175 E Main St, Kent, OH 44240",
+            "photo": "https://image-ticketfly.imgix.net/00/02/83/80/81-og.jpg",
+            "types": ["Concert", "Music", "Local"] 
+
+        },
+        {
+            "name": "Bricco in Kent",
+            "placeId": 12,
+            "address": "210 S Depeyster St, Kent, OH 44240",
+            "photo": "https://scontent.fbkl1-1.fna.fbcdn.net/v/t31.0-8/17038639_1265522970236873_8750006095158804446_o.jpg?oh=4fddc08354396a847bd213112470eab3&oe=5B092A38",
+            "types": ["Drinks", "Healthy", "Patio"] 
+
+        },
+        {
+            "name": "Midway Drive In Theater",
+            "placeId": 14,
+            "address": "2736 OH-59, Ravenna, OH 44266",
+            "photo": "https://bloximages.newyork1.vip.townnews.com/kentwired.com/content/tncms/assets/v3/editorial/2/2f/22fa9878-0fe4-11e6-a099-d3831d29d12d/572675e793d4d.image.jpg",
+            "types": ["Drive-in", "Movies", "Snacks"] 
+
+        },
+        {
+            "name":"Ray's Place",
+            "placeId": 15,
+            "address": "135 Franklin Ave, Kent, OH 44240",
+            "photo": "http://nebula.wsimg.com/a1d266a0f817960d2edf690b0627f576?AccessKeyId=B192EEC44084D850DF4D&disposition=0&alloworigin=1",
+            "types": ["Bar", "Burgers", "American"] 
+
+        },
+        {
+            "name": "Laziza",
+            "placeId": 11,
+            "address": "195 E Erie St, Kent, OH 44240",
+            "photo": "http://www.metisconstruction.com/wp-content/uploads/Laz2.jpg",
+            "types": ["Mediterranean", "Drinks", "Valet"] 
+
+        },
+        {
+            "name": "Main Street Continental Grill",
+            "placeId": 9,
+            "address": "911 E Main St, Kent, OH 44240",
+            "photo": "http://www.phdelicious.com/images/MSCGshop/front.jpg",
+            "types": ["Mediterranean", "Local", "Falafel"] 
+
+        },
+        {
+            "name": "Belleria",
+            "placeId": 2,
+            "address": "1075 Risman Dr, Kent, OH 44242",
+            "photo": "http://www.kent360.com/wp-content/uploads/2010/03/AcornAlley.jpg",
+            "types": ["Italian", "Quick bite", "Cozy"] 
+
+        },
+        {
+            "name": "Rockne's Pub",
+            "placeId": 10,
+            "address": "1450 E Main St, Kent, OH 44240",
+            "photo": "http://broadcastreporting.org/wp-content/uploads/2014/11/Screen-Shot-2014-11-16-at-10.17.15-PM.png",
+            "types": ["American", "Informal", "Burgers"] 
+
+        },
+        {
+            "name": "Quaker Steak & Lube",
+            "placeId": 1,
+            "address": "1075 Risman Dr, Kent, OH 44242",
+            "photo": "https://oneclassblog.com/wp-content/uploads/2017/12/Quaker_Stake_1500.jpg",
+            "types": ["American", "Wings", "Automotive Themed"] 
+
+        },
+        {
+            "name": "Paninis",
+            "placeId": 16,
+            "address": "295 S Water St, Kent, OH 44240",
+            "photo": "https://downtownkentexpansion.files.wordpress.com/2014/04/img_9920.jpg",
+            "types": ["American", "Drinks", "Sports"] 
+
+        },
+        {
+            "name": "Nineteen10",
+            "placeId": 17,
+            "address": "215 S Depeyster St, Kent, OH 44240",
+            "photo": "https://images.trvl-media.com/hotels/7000000/6370000/6369200/6369156/6369156_34_z.jpg",
+            "types": ["Steak", "Lounge", "Drinks"] 
+
+        },
+        {
+            "name": "Subway",
+            "placeId": 3,
+            "address": "1075 Risman Dr, Kent, OH 44242",
+            "photo": "https://du1ux2871uqvu.cloudfront.net/sites/default/files/resize/file/Subway1500-350x233.jpg",
+            "types": ["Sandwiches", "Lunch", "Chain"] 
+
+        },
+        {
+            "name": "Standing Rock Apple Cider Festival",
+            "placeId": 20,
+            "address": "142 N Water St, Kent, OH 44240",
+            "photo": "https://cdn.patchcdn.com/users/136851/2011/08/T800x600/ac7af27ca685bfef16fb68b4c7dbd7fc.jpg",
+            "types": ["Festival", "Music", "Drinks"] 
+        },
+        {
+            "name": "Grazers",
+            "placeId": 4,
+            "address": "1075 Risman Dr, Kent, OH 44242",
+            "photo": "https://static.wixstatic.com/media/b704d7_61e110c3e1be44b1915a43e17dee2a27~mv2.jpg/v1/fill/w_384,h_275,al_c,q_80,usm_0.66_1.00_0.01/b704d7_61e110c3e1be44b1915a43e17dee2a27~mv2.webp",
+            "types": ["Healthy", "Vegan", "Small plates"] 
+
+        },
+        {
+            "name": "Fresco",
+            "placeId": 5,
+            "address": "1075 Risman Dr, Kent, OH 44242",
+            "photo": "https://media-cdn.tripadvisor.com/media/photo-s/03/2b/02/a1/fresco-mexican-grill.jpg",
+            "types": ["Mexican", "Healthy", "Tacos"] 
+
+        },
+        {
+            "name": "Einstein Bros. Bagels",
+            "placeId": 6,
+            "address": "1075 Risman Dr, Kent, OH 44242",
+            "photo": "https://du1ux2871uqvu.cloudfront.net/sites/default/files/resize/file/Einstein_Bros_Bagels_1500-350x233.jpg",
+            "types": ["Bagels", "Breakfast", "Chain"] 
+
+        },
+        {
+            "name": "Taco Bell",
+            "placeId": 7,
+            "address": "805 E Main St, Kent, OH 44240",
+            "photo": "https://d29vij1s2h2tll.cloudfront.net/~/media/images/taco-bell/products/heroes/28080_specialties_nacho_fries_box_1400x788.jpg",
+            "types": ["Tex-Mex", "Drive-Thru", "Quick bite"] 
+
+        },
+        {
+            "name": "Hungry Howie's Pizza",
+            "placeId": 8,
+            "address": "1444 E Main St, Kent, OH 44240",
+            "photo": "http://www.charlotteobserver.com/news/business/biz-columns-blogs/whats-in-store/ofb02k/picture150986852/alternates/LANDSCAPE_1140/HungryHowie2",
+            "types": ["Pizza", "Chain", "Delivery"] 
+
+        }
+        
+]

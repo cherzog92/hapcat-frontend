@@ -1,0 +1,222 @@
+﻿/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,1.0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+    *:focus {
+        outline: none;
+    }
+
+body {
+    -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+    background: linear-gradient(to bottom right, #92FFFB, #FFE892 );
+    background-attachment: fixed;
+    font-size: 12px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Portrait layout (default) */
+.app {
+    /*background:url(../img/logo.png) no-repeat center top;*/ /* 170px x 200px */
+    position: absolute; /* position in the center of the screen */
+    height: 100%; /* text area height */
+    width: 100%; /* text area width */
+    text-align: center;
+}
+
+/*Landscape layout (with min-width)*/
+/*@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;   padding-top + padding-bottom + text area = image height 
+        margin:-90px 0px 0px -198px;   offset vertical: half of image height 
+                                       offset horizontal: half of image width and text area width 
+    }
+}*/
+
+h1 {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0px;
+    overflow: visible;
+    padding: 0px;
+    text-align: center;
+}
+
+.event {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin: 0px 30px;
+    padding: 2px 0px;
+}
+
+    .event.listening {
+        background-color: #333333;
+        display: block;
+    }
+
+    .event.received {
+        background-color: #4B946A;
+        display: none;
+    }
+
+@keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+.blink {
+    animation: fade 3000ms infinite;
+    -webkit-animation: fade 3000ms infinite;
+}
+
+/*Developer Defined Classes*/
+
+.header {
+    width: 100%;
+    height: 55px;
+    background: linear-gradient(to top, transparent, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D);
+    position: fixed;
+    top: 0;
+    z-index: 4;
+}
+
+.logo_div {
+    height: 90%;
+    width: 20%;
+    float: right;
+}
+
+.header_logo {
+    height: 90%;
+    margin-right: 10%;
+    margin-top: 5px;
+}
+
+.header_back_div {
+    float: left;
+    font-family: 'Raleway', sans-serif;
+    padding-top: 1vw;
+    padding-left: 1vw;
+    color: #FFF;
+}
+
+.registration {
+    margin-top: 20%;
+}
+
+.welcome_message_div {
+    margin-top: 32vw;
+    margin-bottom: 15vw;
+    position: relative;
+}
+
+.welcome_message {
+    font-size: 3.0em;
+    font-family: 'Raleway', sans-serif;
+}
+
+.registration_form {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.textinput_div {
+    font-family: 'Raleway', sans-serif;
+    border-radius: 20px;
+    background-color: #FFF;
+    opacity: 0.9;
+    color: #000;
+    width: 100%;
+    margin-bottom: 3vw;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+.textinput_hint {
+    opacity: 1.0;
+    font-size: 1em;
+    margin-bottom:0;
+    padding-left: 20px;
+}
+
+.textinput {
+    opacity: 1.0;
+    font-size: 1.5em;
+    outline: none;
+    outline-style: none;
+    margin-left: 20px;
+    border: none;
+    border-color: transparent;
+}
+
+.form-control:focus {
+    border-color: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.register_button {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+    border-radius: 20px;
+    background: linear-gradient(to bottom right, #FFE892, #D0B554, #CB9F00);
+    color: #000;
+    width: 100%;
+    border-color: #510B5D;
+}
