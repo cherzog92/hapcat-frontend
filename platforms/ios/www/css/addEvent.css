@@ -178,8 +178,10 @@ h1 {
     background-color: #FFF;
     opacity: 0.9;
     color: #000;
-    width: 100%;
+    width: 105%;
     margin-bottom: 3vw;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 textarea:focus, input:focus {
@@ -231,4 +233,16 @@ textarea:focus, input:focus {
     border: none;
     border-color: transparent;
     min-height: 80px;
+}
+
+
+.taginput_div {
+    font-family: 'Raleway', sans-serif;
+    border-radius: 20px;
+    background-color: #FFF;
+    opacity: 0.9;
+    color: #000;
+    width: 30%;
+    margin-bottom: 3vw;
+    
 }

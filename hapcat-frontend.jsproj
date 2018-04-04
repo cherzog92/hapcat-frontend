@@ -3351,8 +3351,8 @@
     <Content Include="simulation\sim-host.js" />
     <Content Include="simulation\sim-host.json" />
     <Content Include="www\.gitignore" />
-    <Content Include="www\addEvent.html" />
-    <Content Include="www\css\addEvent.css" />
+    <Content Include="www\addevent.html" />
+    <Content Include="www\css\addevent.css" />
     <Content Include="www\css\index.css" />
     <Content Include="www\css\login.css" />
     <Content Include="www\css\registration.css" />

@@ -36,7 +36,7 @@
     <meta name="msapplication-tap-highlight" content="no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 
 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -55,7 +55,7 @@
 
     <div class="app">
         <div>
-            <img src="img/logo.svg" align="middle" style="width:300px;height:300px;" />
+            <img src="img/logo.svg" class="logo_center" />
         </div>
         <div class="login_div">
 
@@ -69,7 +69,10 @@
             </div>
             <button class="content_button">Log In</button>
             <div>
-                <a href="registration.html"><button class="content_button">New? Register here!</button></a>
+                <form action="registration.html">
+                    <button type="submit" value="Register" class="content_button">New? Register here!</button>
+                </form>
+                
             </div>
             <div>
                 <div class="forgotpass">
