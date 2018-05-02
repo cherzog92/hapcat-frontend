@@ -293,6 +293,21 @@ function openNodeDetail(returnedLocation) {
     console.log(messageText);
     console.log(returnedLocation.name);
     constructModal(returnedLocation);
+    $("#main").css("overflow", "hidden");
+    $("#content").css("overflow", "hidden");
+    $("#generated_content").css("overflow", "hidden");
+    $("#app").css("overflow", "hidden");
+}
+
+function closeNodeDetail() {
+    var modal = document.getElementById('nodeDetail');
+    modal.style.display = "none";
+    var messageText = "Closing node detail";
+    console.log(messageText);
+    $("#main").css("overflow", "scroll");
+    $("#content").css("overflow", "scroll");
+    $("#generated_content").css("overflow", "scroll");
+    $("#app").css("overflow", "scroll");
 }
 
 function constructModal(returnedLocationId) {
@@ -351,21 +366,81 @@ function constructModal(returnedLocationId) {
     // Get the modal
     var modal = document.getElementById('nodeDetail');
     modal.style.display = "block";
+    hammer();
 }
 
-//Modal 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+function hammer() {
+    var card = $('.modal_content').hammer();
+    console.log(card);
+    card.add(new Hammer.Pan({ direction: Hammer.DIRECTION_HORIZONTAL, threshold: 10 }));
+    card.on('panleft panright', dragCard);
+    card.on('panend', dragEnd);
+    //card.on('swiperight', swipeRight);
+    //card.on('swipeleft', swipeLeft);
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    modal.style.display = "none";
+    console.log("Hammer called")
+    var isDragging = false;
+    var posX = 0;
+
+
+
+    function dragCard(ev) {
+        var elem = ev.target;
+        console.log("DragCard entered");
+        if (ev.gesture.velocityX >= 1 && ev.gesture.deltaX > 50) {
+            swipeRight(ev);
+        } else if (ev.gesture.velocityX <= -1 && ev.gesture.deltaX < 50) {
+            swipeLeft(ev);
+        }
+
+        if (!isDragging && !ev.gesture.isFinal) {
+            isdragging = true;
+            console.log("Currently Dragging...");
+            posX = ev.gesture.deltaX;
+            elem.style.left = posX + "px";
+        }
+    }
+
+    function swipeRight(ev) {
+        if (posX >= 200) {
+            console.log("Right");
+            card.animate({ left: '500px' },
+                {
+                    complete: function () {
+                        closeNodeDetail();
+                    }
+                });
+        }
+    }
+
+    function swipeLeft(ev) {
+        if (posX <= -200) {
+            console.log("Left");
+            card.animate({ left: '-500px' },
+                {
+                    complete: function () {
+                        closeNodeDetail();
+                    }
+                });
+        }
+    }
+
+    function dragEnd(ev) {
+        isDragging = false;
+        console.log("Dragging Completed.")
+        console.log("dragEnd posX: " + posX);
+        //if (posX >= 150 || posX <= -150) {
+        //    offScreen(ev);
+        //}
+        ev.target.style.left = "0px";
+        posX = 0;
+    }
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == $("#nodeDetail")) {
+        $("#nodeDetail").style.display = "none";
     }
 }
 
@@ -373,41 +448,7 @@ function getLorem() {
     return "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 }
 
-/*
- * Replace all SVG images with inline SVG
- */
-//jQuery('img.svg').each(function () {
-//    var $img = jQuery(this);
-//    var imgID = $img.attr('id');
-//    var imgClass = $img.attr('class');
-//    var imgURL = $img.attr('src');
 
-//    jQuery.get(imgURL, function (data) {
-//        // Get the SVG tag, ignore the rest
-//        var $svg = jQuery(data).find('svg');
 
-//        // Add replaced image's ID to the new SVG
-//        if (typeof imgID !== 'undefined') {
-//            $svg = $svg.attr('id', imgID);
-//        }
-//        // Add replaced image's classes to the new SVG
-//        if (typeof imgClass !== 'undefined') {
-//            $svg = $svg.attr('class', imgClass + ' replaced-svg');
-//        }
-
-//        // Remove any invalid XML tags as per http://validator.w3.org
-//        $svg = $svg.removeAttr('xmlns:a');
-
-//        // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
-//        if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-//            $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
-//        }
-
-//        // Replace image with new SVG
-//        $img.replaceWith($svg);
-
-//    }, 'xml');
-
-//});
 
 app.initialize();

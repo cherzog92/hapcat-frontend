@@ -1,42 +1,45 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <widget id="io.hapcat" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Hapcat</name>
-    <description>
+  <name>Hapcat</name>
+  <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
+  <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
     </author>
-    <content src="index.html" />
-    <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
-    <platform name="android">
-        <allow-intent href="market:*" />
-    </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
-    <vs:toolsetVersion xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps">6.3.1</vs:toolsetVersion>
-    <preference name="windows-target-version" value="10.0" />
-    <plugin name="cordova-plugin-datepicker" spec="^0.9.3" />
-    <feature name="DatePicker">
-        <param name="ios-package" value="DatePicker" />
-    </feature>
-    <feature name="DatePickerPlugin">
-        <param name="android-package" value="com.okaybmd.cordova.plugin.datepicker.DatePickerPlugin" />
-    </feature>
-    <hook src="hook.js" type="before_prepare" />
-    <hook src="hook.js" type="after_prepare" />
-    <hook src="hook.js" type="before_compile" />
-    <hook src="hook.js" type="after_compile" />
-    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
-    <engine name="android" spec="^7.0.0" />
-    <engine name="ios" spec="^4.5.4" />
-    <engine name="windows" spec="4.4.2" />
+  <content src="index.html" />
+  <access origin="*" />
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
+  <allow-intent href="tel:*" />
+  <allow-intent href="sms:*" />
+  <allow-intent href="mailto:*" />
+  <allow-intent href="geo:*" />
+  <platform name="android">
+    <allow-intent href="market:*" />
+  </platform>
+  <platform name="ios">
+    <allow-intent href="itms:*" />
+    <allow-intent href="itms-apps:*" />
+  </platform>
+  <preference name="windows-target-version" value="10.0" />
+  <plugin name="cordova-plugin-datepicker" spec="^0.9.3" />
+  <feature name="DatePicker">
+    <param name="ios-package" value="DatePicker" />
+  </feature>
+  <feature name="DatePickerPlugin">
+    <param name="android-package" value="com.okaybmd.cordova.plugin.datepicker.DatePickerPlugin" />
+  </feature>
+  <hook src="hook.js" type="before_prepare" />
+  <hook src="hook.js" type="after_prepare" />
+  <hook src="hook.js" type="before_compile" />
+  <hook src="hook.js" type="after_compile" />
+  <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+  <engine name="android" spec="^7.0.0" />
+  <engine name="ios" spec="^4.5.4" />
+  <engine name="windows" spec="4.4.2" />
+  <vs:toolsetVersion xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps">6.3.1</vs:toolsetVersion>
+  <engine name="android" spec="5.2.1" />
+  <engine name="ios" spec="4.2.0" />
+  <engine name="windows" spec="4.4.2" />
 </widget>

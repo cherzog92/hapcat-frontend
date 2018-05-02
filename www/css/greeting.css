@@ -1,0 +1,179 @@
+﻿/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,1.0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+    *:focus {
+        outline: none;
+    }
+
+body {
+    -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-attachment: fixed;
+    font-size: 12px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Portrait layout (default) */
+.app {
+    /*background:url(../img/logo.png) no-repeat center top;*/ /* 170px x 200px */
+    position: absolute; /* position in the center of the screen */
+    height: 100%; /* text area height */
+    width: 100%; /* text area width */
+    text-align: center;
+    background: linear-gradient(to bottom right, #301235, #720385);
+}
+
+/*Landscape layout (with min-width)*/
+/*@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;   padding-top + padding-bottom + text area = image height 
+        margin:-90px 0px 0px -198px;   offset vertical: half of image height 
+                                       offset horizontal: half of image width and text area width 
+    }
+}*/
+
+h1 {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0px;
+    overflow: visible;
+    padding: 0px;
+    text-align: center;
+}
+
+.event {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin: 0px 30px;
+    padding: 2px 0px;
+}
+
+    .event.listening {
+        background-color: #333333;
+        display: block;
+    }
+
+    .event.received {
+        background-color: #4B946A;
+        display: none;
+    }
+
+@keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+.blink {
+    animation: fade 3000ms infinite;
+    -webkit-animation: fade 3000ms infinite;
+}
+
+/*Developer Defined Classes*/
+
+.logo_div {
+    height: 50%;
+    margin-top: 10vw;
+}
+
+.logo{
+    height: 80%;
+}
+
+.greeting {
+    font-family: 'Raleway', sans-serif;
+    color: #D0B554;
+}
+
+.greeting_button {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+    border-radius: 20px;
+    background: linear-gradient(to bottom right, #FFE892, #D0B554, #CB9F00);
+    color: #000;
+    width: 100%;
+    border-color: #510B5D;
+}
+
+
+.g-signin2 {
+    width: 100%;
+}
+
+    .g-signin2 > div {
+        margin: 4vw auto;
+    }
+
+.facebook{
+    margin-top: 3vw;
+}
+
+.fb-login-button{
+    font-size: 4vw;
+}
+
+.local {
+    width: 253px;
+    margin: 3vw auto;
+    color: #FFF;
+}
+
+.local_button {
+    background: linear-gradient(to bottom right, #FFE892, #D0B554, #CB9F00 );
+    padding: 8px;
+    font-size: 13px;
+    letter-spacing: .25px;
+}

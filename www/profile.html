@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+    <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+    Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+
+    <!-- Begin basic common stuff: -->
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com https://maps.googleapis.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src *;">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css" />
+
+    <!-- EvilIcons -->
+    <link rel="stylesheet" type="text/css" href="lib/evil-icons/evil-icons.css" />
+    <script type="text/javascript" src="lib/evil-icons/evil-icons.js"></script>
+
+    <!-- JQuery -->
+    <script src="lib/jquery/jquery.js"></script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="css/typefaces.css" />
+
+    <!-- Cordova -->
+    <script type="text/javascript" src="cordova.js"></script>
+
+    <!-- Hammer.JS and JQuery integration -->
+    <script type="text/javascript" src="lib/hammerjs/hammer.js"></script>
+    <script type="text/javascript" src="lib/jquery-hammerjs/jquery.hammer.js"></script>
+
+    <!-- .shrug -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
+    <!-- Places API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRJDCYVpBeazrS8T4mxGWn8t2V5QNBrvA&libraries=places"></script>
+
+    <!-- End basic common stuff! -->
+
+    <!-- This page stuff -->
+    <link rel="stylesheet" type="text/css" href="css/profile.css" />
+    <script type="text/javascript" src="js/profile.js"></script>
+
+
+    <title>Hapcat</title>
+</head>
+<body onload="onLoad()">
+    <div id="app" class="app">
+        <div id="main">
+            <div class="header">
+                <div class="logo_div">
+                    <!--<object id="heading_logo" type="application/xhtml+xml" data="img/logo.svg"></object>-->
+                    <a href="index.html"><img src="img/logo.svg" class="header_logo" /></a>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="information">
+                    <h1 class="name">
+                        Username
+                    </h1>
+                    <h3 class="other">
+                        userName@domain.com
+                    </h3>
+                    <h3 class="other">
+                        22 years old
+                    </h3>
+                </div>
+
+                <div class="buttons">
+                    <button class="profile_button change_password_button">Change Password</button>
+                    <button class="profile_button logout_button">Logout</button>
+                </div>
+            </div>
+
+
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="footer_icon_div" id="discover">
+                                <a href="index.html">
+                                    <div data-icon="ei-location" class="icon footer_icon"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="footer_icon_div" id="voting">
+                                <a href="voting.html">
+                                    <div data-icon="ei-check" class="icon footer_icon"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="active_div footer_icon_div" id="profile">
+                                <a href="profile.html">
+                                    <div data-icon="ei-user" class="active icon footer_icon"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="node_detail_generation">
+            <!--Node Detail Generated Here-->
+        </div>
+    </div>
+</body>
+</html>

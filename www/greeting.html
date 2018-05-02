@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+    <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+    Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+
+    <!-- Begin basic common stuff: -->
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com https://maps.googleapis.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src *;">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css" />
+
+    <!-- EvilIcons -->
+    <link rel="stylesheet" type="text/css" href="lib/evil-icons/evil-icons.css" />
+    <script type="text/javascript" src="lib/evil-icons/evil-icons.js"></script>
+
+    <!-- JQuery -->
+    <script src="lib/jquery/jquery.js"></script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="css/typefaces.css" />
+
+    <!-- Cordova -->
+    <script type="text/javascript" src="cordova.js"></script>
+
+    <!-- Hammer.JS and JQuery integration -->
+    <script type="text/javascript" src="lib/hammerjs/hammer.js"></script>
+    <script type="text/javascript" src="lib/jquery-hammerjs/jquery.hammer.js"></script>
+
+    <!-- .shrug -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
+    <!-- Places API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRJDCYVpBeazrS8T4mxGWn8t2V5QNBrvA&libraries=places"></script>
+
+    <!-- End basic common stuff! -->
+
+    <!--Google Login-->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <!-- This page stuff -->
+    <link rel="stylesheet" type="text/css" href="css/greeting.css" />
+    <script type="text/javascript" src="js/greeting.js"></script>
+
+    <title>Hapcat</title>
+</head>
+<body onload="onLoad()">
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=380892415718905&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    <div class="app">
+        <div class="logo_div">
+            <img src="img/logo.svg" class="logo" />
+            <h1 class="greeting">How would you like to login or register?</h1>
+        </div>
+        <div class="facebook">
+            <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+        </div>
+        <div>
+            <div id="google" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-width="253" data-longtitle="true"></div>
+            <script>
+                function onSignIn(googleUser) {
+                    // Useful data for your client-side scripts:
+                    var profile = googleUser.getBasicProfile();
+                    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+                    console.log('Full Name: ' + profile.getName());
+                    console.log('Given Name: ' + profile.getGivenName());
+                    console.log('Family Name: ' + profile.getFamilyName());
+                    console.log("Image URL: " + profile.getImageUrl());
+                    console.log("Email: " + profile.getEmail());
+
+                    // The ID token you need to pass to your backend:
+                    var id_token = googleUser.getAuthResponse().id_token;
+                    console.log("ID Token: " + id_token);
+                };
+            </script>
+        </div>
+        <div class="local">
+            <h3>-Or-</h3>
+            <div class="local_button" onclick="local()">Sign in with us</div>
+        </div>
+    </div>
+</body>
+</html>

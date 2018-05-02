@@ -43,13 +43,13 @@ body {
 /* Portrait layout (default) */
 .app {
     /*background:url(../img/logo.png) no-repeat center top;*/ /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    height:100%;                   /* text area height */
-    width:100%;                   /* text area width */
-    text-align:center;
+    position: absolute; /* position in the center of the screen */
+    height: 100%; /* text area height */
+    width: 100%; /* text area width */
+    text-align: center;
 }
 
- /*Landscape layout (with min-width)*/
+/*Landscape layout (with min-width)*/
 /*@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
         background-position:left center;
@@ -60,48 +60,64 @@ body {
 }*/
 
 h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0px;
+    overflow: visible;
+    padding: 0px;
+    text-align: center;
 }
 
 .event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin: 0px 30px;
+    padding: 2px 0px;
 }
 
-.event.listening {
-    background-color:#333333;
-    display:block;
-}
+    .event.listening {
+        background-color: #333333;
+        display: block;
+    }
 
-.event.received {
-    background-color:#4B946A;
-    display:none;
-}
+    .event.received {
+        background-color: #4B946A;
+        display: none;
+    }
 
 @keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
 }
 
 @-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
 }
 
 .blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+    animation: fade 3000ms infinite;
+    -webkit-animation: fade 3000ms infinite;
 }
 
 /*Developer Defined Classes*/
@@ -162,7 +178,7 @@ h1 {
 /* Content Card */
 
 .content_card {
-    width: 90%;
+    width: 95%;
     height: 24vh;
     background: #E4E4E4;
     margin-top: 10px;
@@ -269,7 +285,7 @@ h1 {
 
 .welcome_card {
     position: relative;
-    width: 90%;
+    width: 95%;
     height: 15vh;
     background: linear-gradient(to bottom right, #92FFFB, #FFE892 );
     margin-top: 10px;
@@ -300,11 +316,13 @@ h1 {
 
 .content_button {
     font-family: 'Raleway', sans-serif;
-    width: 90%;
+    width: 95%;
     height: 10vh;
     margin-top: 10px;
     background: linear-gradient(to bottom right, #FFE892, #D0B554, #CB9F00 );
-    border: none;
+    border-color: #510B5D;
+    border-radius: 0 0 5vh 5vh;
+    border-width: 1px;
     font-size: 5vw;
     color: #FFF;
     box-shadow: 7px 7px 5px #888888;
@@ -327,7 +345,7 @@ h1 {
 
 .footer {
     width: 100%;
-    height: 8vh;
+    height: 7vh;
     background: linear-gradient(to bottom, transparent, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D);
     position: fixed;
     bottom: 0;
@@ -348,11 +366,11 @@ h1 {
     width: 100%;
 }
 
-.footer_icon_div.footer_icon:active {
-    background-color: transparent;
-    border: none;
-    width: 100%;
-}
+    .footer_icon_div:active {
+        background-color: rgba(0,0,0,0.3);
+        border: none;
+        width: 100%;
+    }
 
 
 /*These next classes are for positioning the names alternating on different sides of the card to break up monotony. Cant decide how I feel about it*/
@@ -384,6 +402,42 @@ h1 {
     top: 5px;
 }*/
 
+.content_name {
+    padding-left: 4vw;
+    padding-right: 4vw;
+    margin-bottom: 0;
+    text-align: left;
+    opacity: 1;
+    font-size: 2.5vh;
+}
+
+.content_datetime {
+    margin-bottom: 0;
+    margin-right: 4vw;
+    margin-left: 4vw;
+    text-align: left;
+}
+
+.content_distance_div {
+    font-family: 'Raleway', sans-serif;
+    margin: 5px;
+    border-radius: 1px 15px;
+    background-color: #FFF;
+    opacity: 0.9;
+    color: #000;
+    display: inline-block;
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 0;
+}
+
+.content_distance {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 1.3em;
+    margin: 5px;
+}
 
 
 
@@ -403,14 +457,22 @@ h1 {
 
 .modal_content {
     z-index: 8;
+    position: relative;
     margin: 10vh auto;
     background: linear-gradient(to bottom right, #92FFFB, #FFE892);
     width: 95%;
     height: 80%;
     border-radius: 25px;
-    overflow-y: scroll;
+    display: flex;
+    flex-flow: column;
+    /*overflow-y: scroll;*/
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
+    overflow-x: hidden;
+}
+
+.container {
+    flex: 0 1 auto;
 }
 
 /* Add Animation */
@@ -442,7 +504,7 @@ h1 {
 
 .modal_name_photo {
     width: 100%;
-    height: 50%;
+    flex: 0 1 50%;
     position: relative;
     box-shadow: 7px 7px 5px #888888;
     border-radius: 25px;
@@ -452,6 +514,8 @@ h1 {
 
 .modal_name_div {
     font-family: 'Raleway', sans-serif;
+    width: 70%;
+    float: left;
     margin: 5px;
     border-radius: 20px;
     background-color: #FFF;
@@ -564,15 +628,17 @@ h1 {
 /* Modal Details */
 
 .modal_about {
-    margin-left: 3vw;
-    margin-top: 2vw;
+    width: 94%;
+    margin: 1vh auto 0 auto;
     background-color: rgba(0,0,0,0.2);
     display: inline-block;
-    padding: 1vw;
-    float: left;
+    padding: 0 1vw 0 1vw;
     box-shadow: 7px 7px 5px #888888;
     border-radius: 15px 1px;
-    color: #FFF
+    color: #FFF;
+    overflow-y: scroll;
+    flex: 1 1 auto;
+    font-size: 4vw;
 }
 
 /* Modal Description */
@@ -582,10 +648,13 @@ h1 {
     margin: 4vw auto;
     background-color: rgba(0,0,0,0.2);
     display: inline-block;
-    padding: 1vw;
+    padding: 0 1vw 0 1vw;
     box-shadow: 7px 7px 5px #888888;
     border-radius: 15px 1px;
     color: #FFF;
+    overflow-y: scroll;
+    flex: 1 1 auto;
+    font-size: 3vw;
 }
 
 .lato.modal_paragraph {
@@ -621,7 +690,7 @@ h1 {
     opacity: 0.9;
     color: #000;
     width: 100%;
-    margin-bottom:3vw;
+    margin-bottom: 3vw;
 }
 
 textarea:focus, input:focus {
@@ -633,7 +702,7 @@ textarea:focus, input:focus {
     font-size: 1em;
     margin-bottom: 0;
     padding-left: 20px;
-    text-align:left;
+    text-align: left;
 }
 
 .textinput {
@@ -653,15 +722,26 @@ textarea:focus, input:focus {
     border-radius: 5px;
     padding: 10px;
     height: 50px;
-
-    margin-right:auto;
+    margin-right: auto;
     margin-top: -25px;
     margin-left: auto;
     top: 50%;
-
 }
 
 .forgotpass {
-
     padding: 15px;
+}
+
+/*Icons*/
+.icon {
+    fill: #FFF;
+    width: auto;
+}
+
+.active svg{
+    fill: #D0B554;
+}
+
+.active_div {
+    background: linear-gradient(to bottom, transparent, transparent, rgba(0,0,0,0.3));
 }

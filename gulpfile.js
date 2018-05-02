@@ -21,6 +21,7 @@ gulp.task('add-deps', [
   'add-bootstrap',
   'add-jquery',
   'add-hammerjs',
+  'add-jquery-hammerjs',
   'add-fonts',
   'add-icons'
 ]);
@@ -88,6 +89,11 @@ gulp.task('add-fontawesome', function() {
 gulp.task('add-hammerjs', function() {
   return gulp.src('node_modules/hammerjs/hammer?(.min).js')
     .pipe(gulp.dest('www/lib/hammerjs'))
+});
+
+gulp.task('add-jquery-hammerjs', function () {
+    return gulp.src('node_modules/jquery-hammerjs/jquery.hammer.js')
+        .pipe(gulp.dest('www/lib/jquery-hammerjs'))
 });
 
 

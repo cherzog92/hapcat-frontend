@@ -1,0 +1,442 @@
+﻿/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,1.0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+    *:focus {
+        outline: none;
+    }
+
+body {
+    -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-attachment: fixed;
+    font-size: 12px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    overflow: hidden;
+}
+
+/* Portrait layout (default) */
+.app {
+    /*background:url(../img/logo.png) no-repeat center top;*/ /* 170px x 200px */
+    position: absolute; /* position in the center of the screen */
+    height: 100%; /* text area height */
+    width: 100%; /* text area width */
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(to right, #D05754, lightgrey, lightgrey, lightgrey,lightgrey,lightgrey,lightgrey,lightgrey,lightgrey, #337E7B);
+}
+
+/*Landscape layout (with min-width)*/
+/*@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;   padding-top + padding-bottom + text area = image height 
+        margin:-90px 0px 0px -198px;   offset vertical: half of image height 
+                                       offset horizontal: half of image width and text area width 
+    }
+}*/
+
+h1 {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0px;
+    overflow: visible;
+    padding: 0px;
+    text-align: center;
+}
+
+.event {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin: 0px 30px;
+    padding: 2px 0px;
+}
+
+    .event.listening {
+        background-color: #333333;
+        display: block;
+    }
+
+    .event.received {
+        background-color: #4B946A;
+        display: none;
+    }
+
+@keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+.blink {
+    animation: fade 3000ms infinite;
+    -webkit-animation: fade 3000ms infinite;
+}
+
+/*Developer Defined Classes*/
+
+.header {
+    width: 100%;
+    height: 9vh;
+    background: linear-gradient(to top, transparent, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D);
+    position: fixed;
+    top: 0;
+    z-index: 4;
+}
+
+.footer {
+    width: 100%;
+    height: 7vh;
+    background: linear-gradient(to bottom, transparent, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D, #510B5D);
+    position: fixed;
+    bottom: 0;
+    z-index: 4;
+}
+
+.content {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+.logo_div {
+    height: 100%;
+    width: 20%;
+    float: right;
+}
+
+.search_div {
+    height: 100%;
+    width: 80%;
+    float: left;
+}
+
+.search {
+    width: 80%;
+    float: left;
+    padding: 1.5vh;
+    border: none;
+    margin-top: 1vh;
+    margin-left: 4vw;
+    font-size: 2vh;
+    border-radius: 10px 100px / 120px;
+}
+
+.header_logo {
+    height: 80%;
+    margin-right: 5vw;
+    margin-top: .5vh;
+}
+
+.footer_icon {
+    height: 8vh;
+    padding: 1vh;
+    fill: white;
+}
+
+/*Card Classes*/
+
+.card {
+    z-index: 10;
+    background: transparent;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+    top: 7vh;
+    bottom: 7vh;
+}
+.card_content {
+    z-index: 8;
+    position: relative;
+    margin: 7.25vh auto 2vh auto;
+    background: linear-gradient(to bottom right, #92FFFB, #FFE892);
+    width: 85%;
+    height: 80vh;
+    border-radius: 25px;
+    display: flex;
+    flex-flow: column;
+    /*overflow-y: scroll;*/
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    overflow-x: hidden;
+}
+
+.container {
+    flex: 0 1 auto;
+}
+
+.blank_card {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.card_2 {
+    z-index: 7;
+    opacity: 0.9;
+    margin: 11.5vh auto;
+    width: 75%;
+    height: 75vh;
+    border-radius: 23px;
+    background-color: #7D3988;
+    opacity: 0;
+}
+
+.card_3 {
+    z-index: 6;
+    opacity: 0.5;
+    margin: 9.5vh auto;
+    width: 68%;
+    height: 75vh;
+    border-radius: 21px;
+    background-color: #720385;
+    opacity: 0;
+}
+
+
+
+.card_name_photo {
+    width: 100%;
+    flex: 0 1 50%;
+    position: relative;
+    box-shadow: 7px 7px 5px #720385;
+    border-radius: 25px;
+}
+
+.card_photo_div {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.card_photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    border-radius: 25px;
+}
+
+.card_name_div {
+    font-family: 'Raleway', sans-serif;
+    width: 70%;
+    float: left;
+    margin: 5px;
+    border-radius: 25px 1px;
+    background-color: #FFF;
+    opacity: 0.9;
+    color: #000;
+    display: inline-block;
+    position: absolute;
+    z-index: 3;
+}
+
+.card_name {
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 8px;
+    margin-bottom: 0;
+    text-align: left;
+    opacity: 1;
+    font-size: 1.5em;
+}
+
+.card_paragraph {
+    margin-bottom: 0;
+    margin-right: 8px;
+    margin-left: 8px;
+    text-align: left;
+}
+
+.card_h3 {
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 0;
+    margin-right: 8px;
+    margin-left: 8px;
+    text-align: left;
+    margin-top: -2.5vw;
+}
+
+.card_distance_div {
+    font-family: 'Raleway', sans-serif;
+    margin: 5px;
+    border-radius: 25px 1px;
+    background-color: #FFF;
+    opacity: 0.9;
+    color: #000;
+    display: inline-block;
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 0;
+}
+
+.card_weather_div {
+    font-family: 'Raleway', sans-serif;
+    margin: 5px;
+    border-radius: 1px 25px;
+    background-color: #FFF;
+    opacity: 0.9;
+    color: #000;
+    display: inline-block;
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    top: 0;
+}
+
+.card_distance {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 1.3em;
+    margin: 5px;
+}
+
+.card_weather {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 1.3em;
+    margin: 5px;
+}
+
+.card_tag_column_div {
+    padding: 0;
+}
+
+.card_tag_div {
+    margin: 3vw auto;
+    border-radius: 15px 1px;
+    background-color: #D05754;
+    color: #FFF;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+    width: 90%;
+    box-shadow: 7px 7px 5px #720385;
+}
+
+.card_tag_text {
+    font-family: 'Dosis', sans-serif;
+    margin: 2px;
+    /*padding-left: 20px;
+    padding-right: 20px;*/
+    font-size: 1.1em;
+}
+
+.card_tag_area {
+}
+
+.card_about {
+    width: 94%;
+    margin: 0.5vh auto 0 auto;
+    background-color: rgba(0,0,0,0.2);
+    display: inline-block;
+    padding: 0 1vw 0 1vw;
+    float: left;
+    box-shadow: 7px 7px 5px #720385;
+    border-radius: 15px 1px;
+    color: #FFF;
+    overflow-y: scroll;
+    flex: 1 1 auto;
+    font-size: 3vw;
+}
+
+.card_description {
+    width: 94%;
+    margin: 4vw auto;
+    background-color: rgba(0,0,0,0.2);
+    display: inline-block;
+    padding: 0 1vw 0 1vw;
+    box-shadow: 7px 7px 5px #720385;
+    border-radius: 15px 1px;
+    color: #FFF;
+    overflow-y: scroll;
+    flex: 1 1 auto;
+    font-size: 3vw;
+}
+
+.card_tag_area {
+    margin: 10vw;
+    box-shadow: 7px 7px 5px #720385;
+}
+
+/*Fonts*/
+
+.syncopate {
+    font-family: 'Syncopate', sans-serif;
+}
+
+.dosis {
+    font-family: 'Dosis', sans-serif;
+}
+
+.raleway {
+    font-family: 'Raleway', sans-serif;
+}
+
+.lato {
+    font-family: 'Lato', sans-serif;
+}
+
+/*Icons*/
+.icon {
+    fill: #FFF;
+    width: auto;
+}
+
+.active svg {
+    fill: #D0B554;
+}
+
+.active_div {
+    background: linear-gradient(to bottom, transparent, transparent, rgba(0,0,0,0.3));
+}
